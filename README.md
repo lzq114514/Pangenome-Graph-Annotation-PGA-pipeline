@@ -2,8 +2,11 @@
 "A pggb-based homologous backfill annotation method"
 1. Setting up the environment:
     - Use conda to create an environment from pga.yaml.
-    - Use Singularity to download the pggb tool: `singularity pull docker://ghcr.io/pangenome/pggb:latest`
-    - Clone the pggb repository: `git clone --recursive https://github.com/pangenome/pggb.git`
+      `conda env create -f pga.yaml`
+    - Use Singularity to download the pggb tool
+      `singularity pull docker://ghcr.io/pangenome/pggb:latest`
+    - Clone the pggb repository
+      `git clone --recursive https://github.com/pangenome/pggb.git`
  2. Input requirements:
     - A folder containing all genome FASTA files (with .fna extension) and corresponding GFF files.
     - For each chromosome ID in the FASTA files, the chromosome must be labeled as "chromosome 1", "chromosome x" for sex chromosomes, etc. (currently only human genome is supported, but the example uses Arabidopsis from the data/ninanjie/fna folder).
