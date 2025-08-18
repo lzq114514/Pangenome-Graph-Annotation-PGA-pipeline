@@ -1,4 +1,4 @@
-<img width="1044" height="51" alt="image" src="https://github.com/user-attachments/assets/52a9c32e-d74c-48ce-b929-123977512564" /># Pangenome-Graph-Annotation-PGA-pipeline
+# Pangenome-Graph-Annotation-PGA-pipeline
 "A pggb-based homologous backfill annotation method"
 1. Setting up the environment:
     - Use conda to create an environment from pga.yaml.
@@ -71,7 +71,7 @@
         
         - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
 
-        <img width="1017" height="54" alt="image" src="https://github.com/user-attachments/assets/29cf53e0-d22f-4158-9354-52e030ac4e50" />
+        <img width="1044" height="51" alt="image" src="https://github.com/user-attachments/assets/52a9c32e-d74c-48ce-b929-123977512564" />
 
 
 
