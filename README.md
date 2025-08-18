@@ -2,10 +2,13 @@
 "A pggb-based homologous backfill annotation method"
 1. Setting up the environment:
     - Use conda to create an environment from pga.yaml.
+
       `conda env create -f pga.yaml`
     - Use Singularity to download the pggb tool
+
       `singularity pull docker://ghcr.io/pangenome/pggb:latest`
     - Clone the pggb repository
+
       `git clone --recursive https://github.com/pangenome/pggb.git`
  2. Input requirements:
     - A folder containing all genome FASTA files (with .fna extension) and corresponding GFF files.
@@ -13,7 +16,9 @@
  3. Running the pipeline (5 steps):
 
     Step 1: 
-        - Run with: `sbatch 1gfchr.sh data/ninanjie`
+        - Run with:
+
+    `sbatch 1gfchr.sh data/ninanjie`
         - Before running, modify the sbatch parameters in `gffreademapper.py`（bottom of script） and `gfchr.sh`(top of script) to match your job submission system.
 
 
@@ -35,20 +40,27 @@
     START_CHR and END_CHR: the first and last chromosome numbers of the reference genome.
 
     Detailed parameters for PGGB can be found in the middle of this script such as -n -k -j
-        - Then run: `sbatch 2pggb.sh`
+        - Then run:
+
+    `sbatch 2pggb.sh`
 
 
     Step 3:
-        - Run: `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
+        - Run:
+   `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
         - Here, `ninanjie1` is the prefix of the reference genome FASTA file used in pggb, and `CP` is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
    
 
     Step 4:
-        - Run: `python3 4xunzhaogff.py ninanjie`
+        - Run:
+
+    `python3 4xunzhaogff.py ninanjie`
         - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
 
 
     Step 5:
-        - Run: `python3 5anno.py data/ninanjie`
+        - Run:
+
+    `python3 5anno.py data/ninanjie`
         - Modify the sbatch parameters in the script to match your Linux system, and set the `prefix` parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to `ninanjie1#1#`.
         - The output will be `anno.gff3`.
