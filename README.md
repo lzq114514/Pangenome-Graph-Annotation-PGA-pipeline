@@ -11,6 +11,7 @@
     Step 1: 
         - Run with: `sbatch 1gfchr.sh data/ninanjie`
         - Before running, modify the sbatch parameters in `gffreademapper.py`（bottom of script） and `gfchr.sh`(top of script) to match your job submission system.
+
     Step 2:
         - Edit the script `2pggb.sh` to set the following parameters:
             DEFAULT_PARTITION: your job system partition
@@ -22,12 +23,15 @@
             START_CHR and END_CHR: the first and last chromosome numbers of the reference genome.
     Detailed parameters for PGGB can be found in the middle of this script such as -n -k -j
         - Then run: `sbatch 2pggb.sh`
+
     Step 3:
         - Run: `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
         - Here, `ninanjie1` is the prefix of the reference genome FASTA file used in pggb, and `CP` is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
+   
     Step 4:
         - Run: `python3 4xunzhaogff.py ninanjie`
         - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
+
     Step 5:
         - Run: `python3 5anno.py data/ninanjie`
         - Modify the sbatch parameters in the script to match your Linux system, and set the `prefix` parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to `ninanjie1#1#`.
