@@ -77,12 +77,11 @@
 
     Step 4:
        
-        - Run:
+    - Run:
 
     `python3 4xunzhaogff.py ninanjie`
-        
-        
-        - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
+           
+    - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
 
        
 
@@ -91,11 +90,11 @@
 
 
     Step 5:
-        - Run:
-
+    - Run:
+    
     `python3 5anno.py data/ninanjie`
         
-        - Modify the sbatch parameters in the script to match your Linux system, and set the `prefix` parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to `ninanjie1#1#`.
+    - Modify the sbatch parameters in the script to match your Linux system, and set the `prefix` parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to `ninanjie1#1#`.
 
 
 <img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
