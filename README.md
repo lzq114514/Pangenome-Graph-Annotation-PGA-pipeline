@@ -69,15 +69,17 @@
 
 
     Step 3:
-        - Run:
+
+    - Run:
 
 `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
-        - Here, `ninanjie1` is the prefix of the reference genome FASTA file used in pggb, and `CP` is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
+        
+    Here, `ninanjie1` is the prefix of the reference genome FASTA file used in pggb, and `CP` is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
    
 
     Step 4:
        
-    - Run:
+        - Run:
 
     `python3 4xunzhaogff.py ninanjie`
            
@@ -100,4 +102,4 @@
 <img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
 
         
-        - The output will be `anno.gff3`.
+        - The output will be `pga_anno.gff3`.
