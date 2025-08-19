@@ -9,11 +9,11 @@ from collections import defaultdict
 from Bio import SeqIO  # 用于解析 FASTA 文件
 
 # ========== 配置路径 ==========
-input_gff    = "/public/home/acfurbn1nz/huitian/data/gpapipeline/data/shuidao/shuidao1/shuidao1.gff"
-input_fna    = "/public/home/acfurbn1nz/huitian/data/gpapipeline/data/shuidao/shuidao1/shuidao1.fna"
+input_gff    = "data/ninanjie/ninanjie1/ninanjie1.gff"
+input_fna    = "data/ninanjie/ninanjie1/ninanjie1.fna"
 input_base   = Path(input_gff).parent.parent
 source_dir   = input_base / "output"
-output_base  = input_base.parent / "shuidaoworkflow3"
+output_base  = input_base.parent / "ninanjieworkflow3"
 splitgff_dir = output_base / "splitgff"
 gffindex_dir = output_base / "gffindex"
 annotated_dir = output_base / "sp18"  # 新增注释输出目录
