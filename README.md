@@ -101,5 +101,29 @@
 
 <img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
 
+
+Step 6: Miniprot Annotation
+
+Run:
+
+python /public/home/acfurbn1nz/huitian/data/gpapipeline/miniprot.py \
+    --input-dir INPUT_DIR \
+    --protein /workflow4/miniprotzhushi.fa \
+    [--partition PARTITION] \
+    [--ntasks-per-node NTASKS_PER_NODE] \
+    [--threads THREADS] \
+    [--job-name JOB_NAME] \
+    [--group-workers GROUP_WORKERS]
+
+
+Description:
+
+--input-dir: Specify the directory containing the genome files to be annotated. Multiple genomes can be included.
+
+--protein: Provide the protein reference database used for annotation. The path should be /workflow4/miniprotzhushi.fa.
+
+Other parameters (e.g., --partition, --threads) can be adjusted according to your system resources.
+
+This step performs homology-based annotation using Miniprot, generating preliminary GFF3 functional annotation files for the input genomes.
         
-        - The output will be `pga_anno.gff3`.
+  
