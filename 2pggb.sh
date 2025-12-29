@@ -9,14 +9,14 @@
 #SBATCH --error=%j.err
 #SBATCH --output=%j.out
 # 默认参数
-DEFAULT_PARTITION="hebhcnormal02"
-DEFAULT_REF_PREFIX="ninanjie1"
-DEFAULT_WORKDIR="/data/ninanjieworkflow2"
+DEFAULT_PARTITION="hebhcnormal01"
+DEFAULT_REF_PREFIX="putao1"
+DEFAULT_WORKDIR="/public/home/acfurbn1nz/huitian/data/gpapipeline/data/putaoworkflow2"
 DEFAULT_SINGULARITY_PATH="/public/software/apps/singularity/3.7.3/bin/singularity"
-DEFAULT_PGGB_IMAGE="pggb-latest.simg"
-DEFAULT_PGGB_BIN="pggb/pggb"
+DEFAULT_PGGB_IMAGE="/public/home/acfurbn1nz/pggb-latest.simg"
+DEFAULT_PGGB_BIN="/public/home/acfurbn1nz/pggb/pggb"
 START_CHR=1
-END_CHR=6
+END_CHR=19
 
 # ==============================================
 # 参数解析
@@ -70,7 +70,7 @@ command -v samtools >/dev/null || { echo "❌ samtools not loaded"; exit 1; }
 command -v vg >/dev/null || { echo "❌ vg not loaded"; exit 1; }
 
 # PGGB参数
-PGGB_PARAMS="-s 5000 -l 25000 -p 90 -c 1 -K 19 -F 0.001 -g 30 -k 23 -f 0 -B 10M -n 6 -j 0 -e 0 -G 700,900,1100 -P 1,19,39,3,81,1 -O 0.001 -d 100 -Q Consensus_ -Y \"#\""
+PGGB_PARAMS="-s 5000 -l 25000 -p 90 -c 1 -K 19 -F 0.001 -g 30 -k 23 -f 0 -B 10M -n 12 -j 0 -e 0 -G 700,900,1100 -P 1,19,39,3,81,1 -O 0.001 -d 100 -Q Consensus_ -Y \"#\""
 
 # ==============================================
 # 步骤1: 索引FASTA文件（串行执行）
