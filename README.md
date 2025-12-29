@@ -106,7 +106,7 @@ Step 6: Miniprot Annotation
 
 Run:
 
-python /public/home/acfurbn1nz/huitian/data/gpapipeline/miniprot.py \
+python miniprot.py \
     --input-dir INPUT_DIR \
     --protein /workflow4/miniprotzhushi.fa \
     [--partition PARTITION] \
