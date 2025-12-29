@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=pep
-#SBATCH --partition=hebhcnormal01
+#SBATCH --partition=debug
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=60
 #SBATCH --error=%j.err
@@ -31,7 +31,7 @@ echo "🚀 Step 1: Running gffreademapper.py..."
 PYOUT=$(python3 gffreademapper.py "$INPUT_DIR" 2>&1 || true)
 echo "$PYOUT"
 
-# 提取所有 "Submitted batch job <id>" 中的 id（可能有多个）
+# 提取 "Submitted batch job <id>" 中的 id（可能只有一个）
 readarray -t JOBIDS < <(echo "$PYOUT" | grep -oP 'Submitted batch job \K\d+' || true)
 
 if [ "${#JOBIDS[@]}" -eq 0 ]; then
@@ -41,17 +41,16 @@ else
     echo "📌 Captured job IDs: ${JOBIDS[*]}"
 fi
 
-#### 2) 等待所有捕获到的主 job 和 emapper_* 子作业都完成
+#### 2) 等待捕获到的 job（若有）和 emapper_* 子作业都完成
 echo "⏳ Waiting for captured jobs + emapper_* child jobs to finish..."
 
 WAIT_INTERVAL=60    # 秒，轮询间隔
 while true; do
     still_main_running=0
 
-    # 如果有捕获到 JOBIDS，就检查它们
+    # 如果有捕获到 JOBIDS，就检查它们是否还在队列中
     if [ "${#JOBIDS[@]}" -gt 0 ]; then
         for jid in "${JOBIDS[@]}"; do
-            # squeue -j <jid> -h  若有行则还在队列中
             cnt=$(squeue -j "$jid" -h 2>/dev/null | wc -l || true)
             if [ "$cnt" -gt 0 ]; then
                 still_main_running=1
@@ -60,22 +59,22 @@ while true; do
         done
     fi
 
-    # 检查当前用户是否还有以 emapper_ 开头的作业
-    # 使用 squeue -u "$USER" -h -o "%j" 然后 grep 计数
-    emapper_count=$(squeue -u "$USER" -h -o "%j" 2>/dev/null | grep -c -E '^emapper_') || emapper_count=0
+    # 检查当前用户是否还有以 emapper_ 或 emapper_array 开头的作业
+    # 因为数组任务 job name 是 "emapper_array"（在 Python 脚本中），但也兼容 "emapper_" 前缀
+    emapper_count=$(squeue -u "$USER" -h -o "%j" 2>/dev/null | grep -c -E '^emapper(_|array|_)' || true)
 
     # 决策：如果没有 main job 且没有 emapper 作业，则跳出循环
     if [ "$still_main_running" -eq 0 ] && [ "$emapper_count" -eq 0 ]; then
-        echo "✅ No main JOBIDs running and no emapper_* jobs running."
+        echo "✅ No main JOBIDs running and no emapper jobs running."
         break
     fi
 
     # 打印状态信息
     if [ "$still_main_running" -eq 1 ]; then
-        echo "⏳ Some main job(s) still running... (sleep ${WAIT_INTERVAL}s)"
+        echo "⏳ Some captured job(s) still running... (sleep ${WAIT_INTERVAL}s)"
     fi
     if [ "$emapper_count" -gt 0 ]; then
-        echo "⏳ ${emapper_count} emapper_* job(s) still running... (sleep ${WAIT_INTERVAL}s)"
+        echo "⏳ ${emapper_count} emapper job(s) still running... (sleep ${WAIT_INTERVAL}s)"
     fi
 
     sleep "$WAIT_INTERVAL"
