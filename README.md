@@ -10,8 +10,9 @@
    - [Step 2: Run PGGB](#step-2-run-pggb)  
    - [Step 3: Generate VCF from PGGB](#step-3-generate-vcf-from-pggb)  
    - [Step 4: Unmerge GFF](#step-4-unmerge-gff)  
-   - [Step 5: Final annotation](#step-5-final-annotation)  
-   - [Step 6: Sort annotation files](#step-6-sort-annotation-files)  
+   - [Step 5: Final annotation](#step-5-final-annotation)
+   - [Step 6: Sort annotation files](#step-6-sort-annotation-files)
+   - [Step 7: Sort annotation files](#step-7-sort-annotation-files)  
 
 ---
 
@@ -24,14 +25,14 @@ Create a conda environment from the provided `pap.yaml`:
 Description:
 This sets up all dependencies required to run the pipeline.
 
-Input requirements
+#Input requirements
 A folder containing all genome FASTA files (.fna) and corresponding GFF files.
 
 Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome X" for sex chromosomes, etc. (Currently only human genome fully supported; the example uses Arabidopsis in data/ninanjie/fna).
 
 
-Running the pipeline
-Step 1: Prepare chromosomes
+#Running the pipeline
+#Step 1: Prepare chromosomes
 Run:
 
 
@@ -41,7 +42,7 @@ Description:
 Before running, modify the sbatch parameters in gffreademapper.py (bottom of script) and gfchr.sh (top of script) to match your job submission system.
 
 
-Step 2: Run PGGB
+#Step 2: Run PGGB
 Run:
 
 
@@ -67,7 +68,7 @@ START_CHR and END_CHR: first and last chromosome numbers of the reference genome
 Additional PGGB parameters (e.g., -n, -k, -j) are in the middle of the script.
 
 
-Step 3: Generate VCF from PGGB
+#Step 3: Generate VCF from PGGB
 Run:
 
 
@@ -79,7 +80,7 @@ ninanjie1 is the prefix of the reference genome FASTA file used in PGGB
 
 CP is the first two letters of the reference genome chromosome ID (for Arabidopsis chromosome >CP002684.1, use CP)
 
-Step 4: Unmerge GFF
+#Step 4: Unmerge GFF
 Run:
 
 
@@ -89,7 +90,7 @@ Description:
 Modify the parameters input_gff and input_fna in the script to point to the reference genome's GFF and FASTA files.
 
 
-Step 5: Final annotation
+#Step 5: Final annotation
 Run:
 
 
@@ -98,7 +99,7 @@ Run:
 Description:
 Modify sbatch parameters in the script to match your Linux system, and set the prefix parameter to the reference genome prefix followed by #1# (e.g., for Arabidopsis, use ninanjie1#1#).
 
-Step 6: minimap annotation
+#Step 6: minimap annotation
 Run:
 
 
@@ -108,7 +109,7 @@ Description:INPUT_DIR is the directory containing files to be annotated. It shou
 
 
 
-Step 7: Sort annotation files
+#Step 7: Sort annotation files
 Run:
 
 
