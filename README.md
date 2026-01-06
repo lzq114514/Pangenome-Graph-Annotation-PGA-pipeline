@@ -68,7 +68,7 @@
 
 `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
         
-    Here, `ninanjie1` is the prefix of the reference genome FASTA file used in pggb, and `CP` is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
+    Here, “ninanjie1” is the prefix of the reference genome FASTA file used in pggb, and “CP” is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
    
 
     Step 4:
@@ -77,7 +77,7 @@
 
     `python3 4xunzhaogff.py ninanjie`
            
-    - Modify the parameters `input_gff` and `input_fna` in the script to point to the reference genome's GFF and FASTA files.
+    - Modify the parameters “input_gff” and “input_fna” in the script to point to the reference genome's GFF and FASTA files.
 
        
 
@@ -90,7 +90,7 @@
     
     `python3 5anno.py data/ninanjie`
         
-    - Modify the sbatch parameters in the script to match your Linux system, and set the `prefix` parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to `ninanjie1#1#`.
+    - Modify the sbatch parameters in the script to match your Linux system, and set the “prefix” parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to “ninanjie1#1#”.
 
 
 <img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
@@ -100,14 +100,14 @@ Step 6: Miniprot Annotation
 
 Run:
 
-python miniprot.py \
+'python miniprot.py \
     --input-dir INPUT_DIR \
     --protein ./workflow4/miniprotzhushi.fa \
     [--partition PARTITION] \
     [--ntasks-per-node NTASKS_PER_NODE] \
     [--threads THREADS] \
     [--job-name JOB_NAME] \
-    [--group-workers GROUP_WORKERS]
+    [--group-workers GROUP_WORKERS]'
 
 
 Description:
@@ -124,7 +124,7 @@ Step 7: sort Annotation files
 
 Run:
 
-python 7sort.py INPUT_DIR
+'python 7sort.py INPUT_DIR'
 
 Description:
 
