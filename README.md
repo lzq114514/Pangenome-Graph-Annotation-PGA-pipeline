@@ -25,7 +25,7 @@ Create a conda environment from the provided `pap.yaml`:
 Description:
 This sets up all dependencies required to run the pipeline.
 
-#Input-requirements
+## Input requirements
 A folder containing all genome FASTA files (.fna) and corresponding GFF files.
 
 Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome X" for sex chromosomes, etc. (Currently only human genome fully supported; the example uses Arabidopsis in data/ninanjie/fna).
