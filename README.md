@@ -29,6 +29,7 @@ This sets up all dependencies required to run the pipeline.
 A folder containing all genome FASTA files (.fna) and corresponding GFF files.
 
 Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome X" for sex chromosomes, etc. (Currently only human genome fully supported; the example uses Arabidopsis in data/ninanjie/fna).
+
 <img width="270" height="70" alt="image" src="https://github.com/user-attachments/assets/72292c0b-e1d5-489a-9525-e8c5439ec979" />
 
 ## Running the pipeline
