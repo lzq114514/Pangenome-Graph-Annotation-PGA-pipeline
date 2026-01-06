@@ -1,4 +1,4 @@
-# Pangenome-Graph-Annotation-PGA-pipeline
+# graph pangenome annotation pipeline (PAP)
 
 "A pggb-based homologous backfill annotation method"
 
