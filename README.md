@@ -93,7 +93,8 @@ Run:
 Description:
 Modify the parameters input_gff and input_fna in the script to point to the reference genome's GFF and FASTA files.
 
-<img width="500" height="25" alt="image" src="https://github.com/user-attachments/assets/35487177-4aea-4fe1-ad24-8a86652d6012" />
+<img width="501" height="147" alt="image" src="https://github.com/user-attachments/assets/d90647d4-bf8c-4edf-a3be-afb5b3a906ea" />
+
 
 ## Step 5: Final annotation
 Run:
