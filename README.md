@@ -1,24 +1,18 @@
 # Pangenome-Graph-Annotation-PGA-pipeline
 "A pggb-based homologous backfill annotation method"
 1. Setting up the environment:
-    - Use conda to create an environment from pga.yaml.
+    - Use conda to create an environment from pap.yaml.
 
-      `conda env create -f pga.yaml`
-    - Use Singularity to download the pggb tool
+      `conda env create -f pap.yaml`
 
-      `singularity pull docker://ghcr.io/pangenome/pggb:latest`
-    - Clone the pggb repository
-
-      `git clone --recursive https://github.com/pangenome/pggb.git`
- 2. Input requirements:
+2. Input requirements:
     - A folder containing all genome FASTA files (with .fna extension) and corresponding GFF files.
     - For each chromosome ID in the FASTA files, the chromosome must be labeled as "chromosome 1", "chromosome x" for sex chromosomes, etc. (currently only human genome is supported, but the example uses Arabidopsis from the data/ninanjie/fna folder).
 
 
       <img width="270" height="70" alt="image" src="https://github.com/user-attachments/assets/72292c0b-e1d5-489a-9525-e8c5439ec979" />
 
- 
- 3. Running the pipeline (5 steps):
+3. Running the pipeline (5 steps):
 
     Step 1: 
         - Run with:
@@ -108,7 +102,7 @@ Run:
 
 python miniprot.py \
     --input-dir INPUT_DIR \
-    --protein /workflow4/miniprotzhushi.fa \
+    --protein ./workflow4/miniprotzhushi.fa \
     [--partition PARTITION] \
     [--ntasks-per-node NTASKS_PER_NODE] \
     [--threads THREADS] \
@@ -126,4 +120,14 @@ Other parameters (e.g., --partition, --threads) can be adjusted according to you
 
 This step performs homology-based annotation using Miniprot, generating preliminary GFF3 functional annotation files for the input genomes.
         
-  
+Step 7: sort Annotation files
+
+Run:
+
+python 7sort.py INPUT_DIR
+
+Description:
+
+Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step were organized into a standard annotation format.
+
+
