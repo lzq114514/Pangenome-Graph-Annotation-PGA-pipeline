@@ -61,12 +61,6 @@ DEFAULT_REF_PREFIX: prefix of reference genome
 
 DEFAULT_WORKDIR: absolute path to workflow2 (e.g., ninanjieworkflow2)
 
-DEFAULT_SINGULARITY_PATH: path to Singularity
-
-DEFAULT_PGGB_IMAGE: path to downloaded pggb-latest.simg
-
-DEFAULT_PGGB_BIN: path to PGGB binary
-
 START_CHR and END_CHR: first and last chromosome numbers of the reference genome
 
 Additional PGGB parameters (e.g., -n, -k, -j) are in the middle of the script.
@@ -91,7 +85,7 @@ Run:
 `python3 4xunzhaogff.py ninanjie`
 
 Description:
-Modify the parameters input_gff and input_fna in the script to point to the reference genome's GFF and FASTA files.
+Modify the parameters input_gff and input_fna in the script to point to the reference genome's GFF and FASTA files.The string "ninanjieworkflow3" after output_base should be replaced with "species_workflow3" (i.e., the species name followed by workflow3).
 
 <img width="501" height="147" alt="image" src="https://github.com/user-attachments/assets/d90647d4-bf8c-4edf-a3be-afb5b3a906ea" />
 
