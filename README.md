@@ -44,7 +44,7 @@ Before running, modify the sbatch parameters in gffreademapper.py (bottom of scr
 
 <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/0eff2bdf-d286-4cc6-8335-4c53d73f30da" />
 
-<img width="200" height="104" alt="image" src="https://github.com/user-attachments/assets/5b0a1e8f-b95e-4823-87c6-978b4f5318a0" />
+<img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/5b0a1e8f-b95e-4823-87c6-978b4f5318a0" />
 
 ## Step 2: Run PGGB
 Run:
@@ -93,6 +93,7 @@ Run:
 Description:
 Modify the parameters input_gff and input_fna in the script to point to the reference genome's GFF and FASTA files.
 
+<img width="500" height="25" alt="image" src="https://github.com/user-attachments/assets/35487177-4aea-4fe1-ad24-8a86652d6012" />
 
 ## Step 5: Final annotation
 Run:
@@ -102,6 +103,8 @@ Run:
 
 Description:
 Modify sbatch parameters in the script to match your Linux system, and set the prefix parameter to the reference genome prefix followed by #1# (e.g., for Arabidopsis, use ninanjie1#1#).
+
+<img width="300" alt="final annotation prefix" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
 
 ## Step 6: minimap annotation
 Run:
