@@ -100,14 +100,14 @@ Step 6: Miniprot Annotation
 
 Run:
 
-'python miniprot.py \
+`python miniprot.py \
     --input-dir INPUT_DIR \
     --protein ./workflow4/miniprotzhushi.fa \
     [--partition PARTITION] \
     [--ntasks-per-node NTASKS_PER_NODE] \
     [--threads THREADS] \
     [--job-name JOB_NAME] \
-    [--group-workers GROUP_WORKERS]'
+    [--group-workers GROUP_WORKERS]`
 
 
 Description:
@@ -124,7 +124,7 @@ Step 7: sort Annotation files
 
 Run:
 
-'python 7sort.py INPUT_DIR'
+`python 7sort.py INPUT_DIR`
 
 Description:
 
