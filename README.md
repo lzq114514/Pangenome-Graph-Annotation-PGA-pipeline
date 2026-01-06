@@ -14,70 +14,80 @@
 
 3. Running the pipeline (5 steps):
 
-    Step 1: 
-        - Run with:
+Step 1: 
 
-    `sbatch 1gfchr.sh data/ninanjie`
+- Run with:
 
-    - Before running, modify the sbatch parameters in `gffreademapper.py`（bottom of script） and `gfchr.sh`(top of script) to match your job submission system.
+`sbatch 1gfchr.sh data/ninanjie`
+
+Description:
+
+Before running, modify the sbatch parameters in `gffreademapper.py`（bottom of script） and `gfchr.sh`(top of script) to match your job submission system.
     
 
-    <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/0eff2bdf-d286-4cc6-8335-4c53d73f30da" />
+<img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/0eff2bdf-d286-4cc6-8335-4c53d73f30da" />
     
 
-    <img width="200" height="104" alt="image" src="https://github.com/user-attachments/assets/5b0a1e8f-b95e-4823-87c6-978b4f5318a0" />
+<img width="200" height="104" alt="image" src="https://github.com/user-attachments/assets/5b0a1e8f-b95e-4823-87c6-978b4f5318a0" />
 
 
 
-    Step 2:
-        - Edit the script `2pggb.sh` to set the following parameters:
+Step 2:
 
-    DEFAULT_PARTITION: your job system partition
+Description:
 
-    DEFAULT_REF_PREFIX: the prefix of the reference genome
+- Edit the script `2pggb.sh` to set the following parameters:
 
-    DEFAULT_WORKDIR: the absolute path to workflow2 (e.g., ninanjieworkflow2)
+DEFAULT_PARTITION: your job system partition
 
-    DEFAULT_SINGULARITY_PATH: path to Singularity
+DEFAULT_REF_PREFIX: the prefix of the reference genome
 
-    DEFAULT_PGGB_IMAGE: path to the downloaded pggb-latest.simg
+DEFAULT_WORKDIR: the absolute path to workflow2 (e.g., ninanjieworkflow2)
 
-    DEFAULT_PGGB_BIN: path to pggb
+DEFAULT_SINGULARITY_PATH: path to Singularity
 
-    START_CHR and END_CHR: the first and last chromosome numbers of the reference genome.
+DEFAULT_PGGB_IMAGE: path to the downloaded pggb-latest.simg
 
-    Detailed parameters for PGGB can be found in the middle of this script such as -n -k -j
+DEFAULT_PGGB_BIN: path to pggb
+
+START_CHR and END_CHR: the first and last chromosome numbers of the reference genome.
+
+Detailed parameters for PGGB can be found in the middle of this script such as -n -k -j
 
 
-    <img width="470" height="100" alt="image" src="https://github.com/user-attachments/assets/2fb9a9d4-be91-4f66-9a30-d271e21bfd6c" />
+<img width="470" height="100" alt="image" src="https://github.com/user-attachments/assets/2fb9a9d4-be91-4f66-9a30-d271e21bfd6c" />
 
     
 
-    <img width="1704" height="33" alt="image" src="https://github.com/user-attachments/assets/53475210-cef9-4d1d-8aeb-05005259224a" />
+<img width="1704" height="33" alt="image" src="https://github.com/user-attachments/assets/53475210-cef9-4d1d-8aeb-05005259224a" />
 
 
 
-    - Then run:
+Then run:
 
-    `sbatch 2pggb.sh`
+`sbatch 2pggb.sh`
 
 
-    Step 3:
+Step 3:
 
-    - Run:
+Run:
+
+Description:
 
 `python3 3gfavcf.py data/ninanjie ninanjie1 CP`
         
-    Here, “ninanjie1” is the prefix of the reference genome FASTA file used in pggb, and “CP” is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
+Here, “ninanjie1” is the prefix of the reference genome FASTA file used in pggb, and “CP” is the first two letters of the reference genome chromosome ID (e.g., for Arabidopsis chromosome ">CP002684.1", use "CP").
    
 
-    Step 4:
+Step 4:
        
-        - Run:
+Run:
 
-    `python3 4xunzhaogff.py ninanjie`
-           
-    - Modify the parameters “input_gff” and “input_fna” in the script to point to the reference genome's GFF and FASTA files.
+`python3 4xunzhaogff.py ninanjie`
+
+Description:           
+
+Modify the parameters “input_gff” and “input_fna” in the script to point to the reference genome's GFF and FASTA files.
 
        
 
@@ -85,12 +95,15 @@
 
 
 
-    Step 5:
-    - Run:
+Step 5:
+
+- Run:
     
-    `python3 5anno.py data/ninanjie`
+`python3 5anno.py data/ninanjie`
+
+Description:
         
-    - Modify the sbatch parameters in the script to match your Linux system, and set the “prefix” parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to “ninanjie1#1#”.
+Modify the sbatch parameters in the script to match your Linux system, and set the “prefix” parameter to the reference genome prefix followed by "#1#", e.g., for Arabidopsis, set to “ninanjie1#1#”.
 
 
 <img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
@@ -100,14 +113,7 @@ Step 6: Miniprot Annotation
 
 Run:
 
-`python miniprot.py \
-    --input-dir INPUT_DIR \
-    --protein ./workflow4/miniprotzhushi.fa \
-    [--partition PARTITION] \
-    [--ntasks-per-node NTASKS_PER_NODE] \
-    [--threads THREADS] \
-    [--job-name JOB_NAME] \
-    [--group-workers GROUP_WORKERS]`
+`python miniprot.py --input-dir INPUT_DIR --protein ./workflow4/miniprotzhushi.fa --partition PARTITION --ntasks-per-node NTASKS_PER_NODE --threads THREADS --job-name JOB_NAME --group-workers GROUP_WORKERS`
 
 
 Description:
