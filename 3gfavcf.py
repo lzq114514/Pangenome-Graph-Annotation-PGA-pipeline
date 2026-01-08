@@ -110,7 +110,7 @@ for gfa in gfa_files:
     outf = os.path.join(outd, os.path.basename(gfa).replace(".gfa", ".bed"))
     with open(outf, 'w') as fo:
         subprocess.run(
-            ["perl", "/public/home/acfurbn1nz/pan/gfa2bed.pl", gfa],
+            ["perl", "./gfa2bed.pl", gfa],
             check=True, stdout=fo
         )
 
