@@ -105,9 +105,9 @@ Modify sbatch parameters in the script to match your Linux system, and set the p
 Run:
 
 
-`python3 6miniprot.py INPUT_DIR`
+`python3 6miniprot.py --input-dir INPUT_DIR --protein /workflow4/miniprotzhushi.fa --partition PARTITION --threads THREADS`
 
-Description:INPUT_DIR is the directory containing files to be annotated. It should include all .fa files that need to be annotated.
+Description:INPUT_DIR is the directory containing files to be annotated. It should include all .fa files that need to be annotated.The --protein option should be followed by the protein database generated in Step 5 (miniprotzhushi.fa).The --partition option should specify the server partition (node/queue) name.The --threads option indicates the number of threads to be used.
 
 
 
