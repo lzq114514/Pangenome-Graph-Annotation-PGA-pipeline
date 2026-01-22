@@ -41,6 +41,13 @@ Run:
 
 Description:
 Before running, modify the sbatch parameters in gffreademapper.py (bottom of script) and gfchr.sh (top of script) to match your job submission system.
+Before running this script, it is recommended to download the official eggNOG databases to the appropriate directory. For example, if you encounter the error
+DIAMOND database /public/home/liuzhongqi/miniconda3/envs/zhushi/lib/python3.8/site-packages/data/eggnog_proteins.dmnd not present,
+you should create a data directory under
+/public/home/liuzhongqi/miniconda3/envs/zhushi/lib/python3.8/site-packages
+and then download the required databases from
+http://eggnog5.embl.de/download/emapperdb-5.0.2/.
+Downloading via command line can be very slow, so it is recommended to download the files locally first and then transfer them to the server.
 
 <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/0eff2bdf-d286-4cc6-8335-4c53d73f30da" />
 
