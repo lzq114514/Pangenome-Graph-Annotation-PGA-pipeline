@@ -10,8 +10,8 @@
    - [Step 2: Run PGGB](#step-2-run-pggb)  
    - [Step 3: Generate VCF from PGGB](#step-3-generate-vcf-from-pggb)  
    - [Step 4: Unmerge GFF](#step-4-unmerge-gff)  
-   - [Step 5: Final annotation](#step-5-final-annotation)
-   - [Step 6: Sort annotation files](#step-6-sort-annotation-files)
+   - [Step 5: Make annotation](#step-5-final-annotation)
+   - [Step 6: Miniprot annotation](#step-6-miniprot-annotation)
    - [Step 7: Sort annotation files](#step-7-sort-annotation-files)  
 
 ---
@@ -97,7 +97,7 @@ Modify the parameters input_gff and input_fna in the script to point to the refe
 <img width="501" height="147" alt="image" src="https://github.com/user-attachments/assets/d90647d4-bf8c-4edf-a3be-afb5b3a906ea" />
 
 
-## Step 5: Final annotation
+## Step 5: Make annotation
 Run:
 
 
@@ -108,7 +108,7 @@ Modify sbatch parameters in the script to match your Linux system, and set the p
 
 <img width="300" alt="final annotation prefix" src="https://github.com/user-attachments/assets/123a60ae-600a-4465-9d86-23720e3ca1e7" />
 
-## Step 6: minimap annotation
+## Step 6: Miniprot annotation
 Run:
 
 
@@ -123,6 +123,7 @@ Run:
 
 
 `python3 7sort.py INPUT_DIR`
+`python3 8ncbi.py INPUT_DIR`
 
 Description:
-Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step are organized into a standard annotation format.
+Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step are organized into a standard annotation format.Using 7sort.py, the gff3 files will turn to norm
