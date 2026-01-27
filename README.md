@@ -123,9 +123,12 @@ Run:
 
 
 `python3 7sort.py INPUT_DIR`
-`python3 8ncbi.py INPUT_DIR`
-`python3 8ncbi.py INPUT_DIR`
+
 `python3 8ncbi.py INPUT_DIR`
 
+`python3 9AS_other.py INPUT_DIR`
+
+`python3 10pep.py INPUT_DIR`
+
 Description:
-Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step are organized into a standard annotation format.Using 7sort.py, the gff3 files will turn to norm
+Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step are organized into a standard annotation format.Next, run 8ncbi.py to re-standardize the structures within all generated annotation files. Then, execute 9AS_other.py to restore the previously generated "orphan" structures back to normal. Finally, run 10pep.py to perform a protein-based deduplication, which marks the completion of the entire pipeline.
