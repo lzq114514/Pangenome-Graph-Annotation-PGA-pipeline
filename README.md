@@ -123,11 +123,8 @@ Run:
 
 
 `python3 7sort.py INPUT_DIR`
-
 `python3 8ncbi.py INPUT_DIR`
-
 `python3 8ncbi.py INPUT_DIR`
-
 `python3 8ncbi.py INPUT_DIR`
 
 Description:
