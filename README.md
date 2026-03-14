@@ -132,7 +132,9 @@ Run:
 
 Description:
 Using 7sort.py, the orphan (gene-unassigned) alternative splicing structures generated in the previous step are organized into a standard annotation format.Next, 8ncbi.py to re-standardize the structures within all generated annotation files. Then, execute 9AS_other.py to restore the previously generated "orphan" structures back to normal. Finally, run 10pep.py to perform a protein-based deduplication, which marks the completion of the entire pipeline.
-Step 2: run PAP
+
+## Step 2: run PAP
+
 `sbatch --job-name=PAP_pipeline --partition=hebhcnormal01 --nodes=1 --ntasks-per-node=60 --error=%j.err --output=%j.out /public/home/acfurbn1nz/huitian/github/PAP/step3-10.sh --stage1-dir /public/home/acfurbn1nz/huitian/public/home/liuzhongqi/pici/twenty --stage2-dir /public/home/acfurbn1nz/huitian/public/home/liuzhongqi/pici/twenty --tag ae --threads 60 `
 
 
