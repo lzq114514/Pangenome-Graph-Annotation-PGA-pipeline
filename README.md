@@ -90,30 +90,34 @@ Default: 20
 
 These parameters control the behavior of PGGB (Pangenome Graph Builder) during graph construction and alignment.
 
-🔹 Core Alignment & Graph Construction
+Core Alignment & Graph Construction
 Parameter	Description
 --pggb-s	Segment length for sequence partitioning
 --pggb-l	Minimum alignment length
 --pggb-p	Minimum sequence identity (%)
 --pggb-c	Minimum alignment coverage
-🔹 Mapping & Seeding
+
+Mapping & Seeding
 Parameter	Description
 --pggb-K	k-mer size for initial mapping
 --pggb-F	Frequency threshold for repetitive k-mer filtering
 --pggb-g	Maximum allowed gap length
 --pggb-k	k-mer size for graph refinement
 --pggb-f	Alignment refinement filter parameter
-🔹 Graph Construction Behavior
+
+Graph Construction Behavior
 Parameter	Description
 --pggb-B	Memory limit for graph blocks (e.g., 10M)
 --pggb-n	Number of genomes/haplotypes
 --pggb-j	Internal parallel jobs
 --pggb-e	Edge filtering threshold
-🔹 Multi-scale Alignment
+
+Multi-scale Alignment
 Parameter	Description
 --pggb-G	Multi-scale segment sizes (e.g., 700,900,1100)
 --pggb-P	Multi-stage alignment tuning parameters
-🔹 Output & Refinement
+
+Output & Refinement
 Parameter	Description
 --pggb-O	Alignment score threshold
 --pggb-d	Maximum chaining distance
