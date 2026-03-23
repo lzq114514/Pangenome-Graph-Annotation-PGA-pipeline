@@ -16,13 +16,16 @@ Create a conda environment from the provided `pap.yaml`:
 
 
 `conda env create -f pap.yaml`
+
 `cd ./Pangenome-Graph-Annotation-PGA-pipeline`
+
 Description:
 This sets up all dependencies required to run the pipeline.
 
 ## Input requirements
 A folder containing all genome FASTA files (.fna) and corresponding GFF files.
 Each subdirectory should follow this structure:
+
 ./speciename
 ./speciename/speciename1
 ./speciename/speciename1/speciename1.fna
