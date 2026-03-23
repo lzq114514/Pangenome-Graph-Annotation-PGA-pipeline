@@ -22,6 +22,14 @@ This sets up all dependencies required to run the pipeline.
 
 ## Input requirements
 A folder containing all genome FASTA files (.fna) and corresponding GFF files.
+Each subdirectory should follow this structure:
+./speciename
+./speciename/speciename1
+./speciename/speciename1/speciename1.fna
+./speciename/speciename1/speciename1.gff
+./speciename/speciename2
+./speciename/speciename2/speciename2.fna
+./speciename/speciename2/speciename2.gff
 
 Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome X" for sex chromosomes, etc. (Currently only human genome fully supported; the example uses Arabidopsis in data/ninanjie/fna).
 
@@ -39,15 +47,8 @@ Required
 input_dir
 
 Directory containing all genome assemblies and corresponding annotation files.
+Example:./speciename
 
-Each subdirectory should follow this structure:
-
-<img width="483" height="234" alt="image" src="https://github.com/user-attachments/assets/cc4fd37a-57ac-4bcb-971d-9ec08d7c9411" />
-
-
-Example:
-
-/public/home/acfurbn1nz/huitian/github/shuidao
 ⚙️ General Options
 -p, --partition
 
@@ -164,7 +165,7 @@ Example Command
 
 ## Step 2: run PAP
 
-`sbatch --job-name=PAP_pipeline --partition=hebhcnormal01 --nodes=1 --ntasks-per-node=60 --error=%j.err --output=%j.out /public/home/acfurbn1nz/huitian/github/PAP/step3-10.sh --stage1-dir /public/home/acfurbn1nz/huitian/public/home/liuzhongqi/pici/twenty --stage2-dir /public/home/acfurbn1nz/huitian/public/home/liuzhongqi/pici/twenty --tag ae --threads 60 `
+`sbatch --job-name=PAP_pipeline --partition=hebhcnormal01 --nodes=1 --ntasks-per-node=60 --error=%j.err --output=%j.out /public/home/acfurbn1nz/huitian/github/PAP/step3-10.sh --stage1-dir ./speciename --stage2-dir ./speciename2 --tag NC --threads 60 `
 
 
 Description:`sbatch --job-name`, `--partition`, `--nodes`, `--ntasks-per-node`, `--error`, and `--output` are parameters used for submitting jobs with `sbatch`. Users should modify these parameters according to the rules of their HPC system.
