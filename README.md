@@ -92,6 +92,7 @@ These parameters control the behavior of PGGB (Pangenome Graph Builder) during g
 
 Core Alignment & Graph Construction
 Parameter	Description
+
 --pggb-s	Segment length for sequence partitioning
 
 --pggb-l	Minimum alignment length
@@ -102,37 +103,62 @@ Parameter	Description
 
 Mapping & Seeding
 Parameter	Description
+
 --pggb-K	k-mer size for initial mapping
+
 --pggb-F	Frequency threshold for repetitive k-mer filtering
+
 --pggb-g	Maximum allowed gap length
+
 --pggb-k	k-mer size for graph refinement
+
 --pggb-f	Alignment refinement filter parameter
 
 Graph Construction Behavior
 Parameter	Description
+
 --pggb-B	Memory limit for graph blocks (e.g., 10M)
+
 --pggb-n	Number of genomes/haplotypes
+
 --pggb-j	Internal parallel jobs
+
 --pggb-e	Edge filtering threshold
 
 Multi-scale Alignment
 Parameter	Description
+
 --pggb-G	Multi-scale segment sizes (e.g., 700,900,1100)
+
 --pggb-P	Multi-stage alignment tuning parameters
 
 Output & Refinement
 Parameter	Description
+
 --pggb-O	Alignment score threshold
+
 --pggb-d	Maximum chaining distance
+
 --pggb-Q	Consensus path prefix
+
 --pggb-Y	Sequence name delimiter
-🧠 Notes
+
+Notes
 All PGGB parameters can be left as default values for general use.
 For better performance, parameters should be adjusted based on:
 genome size
 sequence divergence
 ploidy level
-🚀 Example Comma
+Example Command
+`sbatch step1-2.sh shuidao \
+-p hebhcnormal01 -r shuidao1 -s 1 -e 5 -t 20 \
+--pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 \
+--pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 \
+--pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 \
+--pggb-G 700,900,1100 \
+--pggb-P 1,19,39,3,81,1 \
+--pggb-O 0.001 --pggb-d 100 \
+--pggb-Q Consensus_ --pggb-Y "#"`
 
 
 
