@@ -27,11 +27,17 @@ A folder containing all genome FASTA files (.fna) and corresponding GFF files.
 Each subdirectory should follow this structure:
 
 ./speciename
+
 ./speciename/speciename1
+
 ./speciename/speciename1/speciename1.fna
+
 ./speciename/speciename1/speciename1.gff
+
 ./speciename/speciename2
+
 ./speciename/speciename2/speciename2.fna
+
 ./speciename/speciename2/speciename2.gff
 
 Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome X" for sex chromosomes, etc. (Currently only human genome fully supported; the example uses Arabidopsis in data/ninanjie/fna).
