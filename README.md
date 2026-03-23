@@ -93,8 +93,11 @@ These parameters control the behavior of PGGB (Pangenome Graph Builder) during g
 Core Alignment & Graph Construction
 Parameter	Description
 --pggb-s	Segment length for sequence partitioning
+
 --pggb-l	Minimum alignment length
+
 --pggb-p	Minimum sequence identity (%)
+
 --pggb-c	Minimum alignment coverage
 
 Mapping & Seeding
