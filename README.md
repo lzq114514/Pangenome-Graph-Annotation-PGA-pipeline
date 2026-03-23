@@ -32,19 +32,18 @@ Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome
 Run:
 
 
-`sbatch step1-2.sh input_dir -p hebhcnormal01 -r ninanjie1 -s 1 -e 5 -t 20 --pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 --pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 --pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 --pggb-G 700,900,1100 --pggb-P 1,19,39,3,81,1 --pggb-O 0.001 --pggb-d 100 --pggb-Q Consensus_ --pggb-Y "#"`
+`sbatch step1-2.sh ./input_dir -p hebhcnormal01 -r input_dir1 -s 1 -e 5 -t 20 --pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 --pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 --pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 --pggb-G 700,900,1100 --pggb-P 1,19,39,3,81,1 --pggb-O 0.001 --pggb-d 100 --pggb-Q Consensus_ --pggb-Y "#"`
 
 Description:
-🧾 Required
+Required
 input_dir
 
 Directory containing all genome assemblies and corresponding annotation files.
 
 Each subdirectory should follow this structure:
 
-genome_name/
-├── genome_name.fna
-└── genome_name.gff
+<img width="483" height="234" alt="image" src="https://github.com/user-attachments/assets/cc4fd37a-57ac-4bcb-971d-9ec08d7c9411" />
+
 
 Example:
 
