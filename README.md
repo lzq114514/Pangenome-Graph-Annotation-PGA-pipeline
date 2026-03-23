@@ -16,6 +16,7 @@ Create a conda environment from the provided `pap.yaml`:
 
 
 `conda env create -f pap.yaml`
+`cd ./Pangenome-Graph-Annotation-PGA-pipeline`
 Description:
 This sets up all dependencies required to run the pipeline.
 
@@ -31,7 +32,7 @@ Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome
 Run:
 
 
-`sbatch /public/home/acfurbn1nz/huitian/github/PAP/step1-2.sh /public/home/acfurbn1nz/your_input_dir -p hebhcnormal01 -r ninanjie1 -s 1 -e 5 -t 20 --pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 --pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 --pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 --pggb-G 700,900,1100 --pggb-P 1,19,39,3,81,1 --pggb-O 0.001 --pggb-d 100 --pggb-Q Consensus_ --pggb-Y "#"`
+`sbatch step1-2.sh input_dir -p hebhcnormal01 -r ninanjie1 -s 1 -e 5 -t 20 --pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 --pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 --pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 --pggb-G 700,900,1100 --pggb-P 1,19,39,3,81,1 --pggb-O 0.001 --pggb-d 100 --pggb-Q Consensus_ --pggb-Y "#"`
 
 Description:
 🧾 Required
