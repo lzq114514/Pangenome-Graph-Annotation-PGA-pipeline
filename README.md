@@ -27,21 +27,14 @@ Chromosome IDs in FASTA files must follow the format "chromosome 1", "chromosome
 <img width="270" height="70" alt="image" src="https://github.com/user-attachments/assets/72292c0b-e1d5-489a-9525-e8c5439ec979" />
 
 ## Running the pipeline
-## Step 1: Prepare chromosomes
+## Step 1: Prepare and run pggb
 Run:
 
 
-`sbatch 1gfchr.sh data/ninanjie`
+`sbatch /public/home/acfurbn1nz/huitian/github/PAP/step1-2.sh /public/home/acfurbn1nz/your_input_dir -p hebhcnormal01 -r ninanjie1 -s 1 -e 5 -t 20 --pggb-s 5000 --pggb-l 25000 --pggb-p 90 --pggb-c 1 --pggb-K 19 --pggb-F 0.001 --pggb-g 30 --pggb-k 23 --pggb-f 0 --pggb-B 10M --pggb-n 5 --pggb-j 0 --pggb-e 0 --pggb-G 700,900,1100 --pggb-P 1,19,39,3,81,1 --pggb-O 0.001 --pggb-d 100 --pggb-Q Consensus_ --pggb-Y "#"`
 
 Description:
-Before running, modify the sbatch parameters in gffreademapper.py (bottom of script) and gfchr.sh (top of script) to match your job submission system.
-Before running this script, it is recommended to download the official eggNOG databases to the appropriate directory. For example, if you encounter the error
-DIAMOND database /public/home/liuzhongqi/miniconda3/envs/zhushi/lib/python3.8/site-packages/data/eggnog_proteins.dmnd not present,
-you should create a data directory under
-/public/home/liuzhongqi/miniconda3/envs/zhushi/lib/python3.8/site-packages
-and then download the required databases from
-http://eggnog5.embl.de/download/emapperdb-5.0.2/.
-Downloading via command line can be very slow, so it is recommended to download the files locally first and then transfer them to the server.
+
 
 <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/0eff2bdf-d286-4cc6-8335-4c53d73f30da" />
 
